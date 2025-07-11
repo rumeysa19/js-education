@@ -1,0 +1,51 @@
+.calculator {
+    width: 320px;                                /* Kutunun genişliği */
+   background: linear-gradient(135deg, #ef65a8 0%, #4d9fff 60%, #181818 100%);                      
+    border-radius: 16px;                       /* Köşeleri yuvarlatır */
+    box-shadow: 0 24px 48px rgba(0,0,0,0.3); /* Gölge efekti */
+    margin: 180px auto;                       /* Üstten 40px boşluk, ortala */
+    padding: 24px 16px 16px 16px;           /* İç boşluklar (üst, sağ, alt, sol) */
+}
+
+.calculator-screen {
+    background:#333;         /* Ekranın arka plan rengi */
+    color: #fff;               /* Yazı rengi */
+    font-size: 2.5rem;         /* Yazı büyüklüğü */
+    border-radius: 0px;        /* Köşeleri yuvarlatır */
+    padding: 24px;             /* İç boşluk */
+    text-align: right;         /* Yazıyı sağa hizalar */
+    margin-bottom: 4px;       /* Altında boşluk bırakır */
+    min-height: 48px;          /* Minimum yükseklik */
+    letter-spacing: 1px;       /* Harfler arası boşluk */
+    overflow-x: auto;          /* Taşarsa yatay kaydırma */
+}
+.calculator-buttons {
+    display: grid;                     /* Izgara düzeni */
+    grid-template-columns: repeat(4, 1fr); /* 4 sütun */
+    gap: 2px;                         /* Butonlar arası boşluk */
+}
+.btn {
+    background: #333;          /* Butonun arka plan rengi */
+    color: #fff;               /* Yazı rengi */
+    font-size: 1.3rem;         /* Yazı büyüklüğü */
+    border: none;              /* Kenarlık yok */
+    border-radius: 8px;          /* Köşeleri yuvarlatır */
+    padding: 18px 0;             /* Dikey ve yatay iç boşluk */
+    cursor: pointer;             /* Üzerine gelince el işareti */
+    transition: background 0.2s; /* Renk geçişi */
+}
+.btn:hover {
+    background: #444;          /* Üzerine gelince arka plan rengi */
+}
+.equal {
+    grid-row: span 2;          /* 2 satır yer kaplar */
+    background: linear-gradient(135deg, #ef65a8 0%, #4d9fff 60%, #181818 100%);        /* Eşittir butonunun rengi */
+    color: #fff;
+    font-size: 1.5rem;
+}
+.equal:hover {
+    background: linear-gradient(135deg, #f482b9 0%, #6facf3 60%, #434343 100%);  
+}
+.zero {
+    grid-column: span 2;       /* 2 sütun yer kaplar */
+}
