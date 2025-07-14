@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayı Tahmin Oyununa Hoş Geldiniz!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+
+ <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    text-align: center;
+    padding: 50px;
+  }
+
+  h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  #sonucMesaji {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+</style>
+
+
+</head>
+<body>
+  <h1>Sayı Tahmin Oyununa Hoş Geldiniz!</h1>
+
+<input type="number" id="tahmin" placeholder="1 ile 100 arasında bir sayı" />
+
+<button id="tahminEtBtn">Tahmin Et</button>
+
+<p id="sonucMesaji"></p>
+  
+<script>
+  // 1-100 arası gizli sayı üret
+  let gizliSayi = Math.floor(Math.random() * 100) + 1;
+  let denemeSayisi = 0;
+
+  // Elementleri al
+  const tahminInput = document.getElementById("tahmin");
+  const tahminButonu = document.getElementById("tahminEtBtn");
+  const mesajAlani = document.getElementById("sonucMesaji");
+
+  tahminButonu.addEventListener( "click", function()
+  {
+  const tahmin = Number(tahminInput.value);
+  denemeSayisi++;
+
+  if (!tahmin || tahmin < 1 || tahmin > 100)
+  {
+    mesajAlani.textContent = "Lütfen 1 ile 100 arası bir sayı giriniz!";
+    mesajAlani.style.color = "red";
+    return;
+  }
+  if (tahmin === gizliSayi)
+  {
+    mesajAlani.textContent =`🎉 Tebrikler ${denemeSayisi}. deneme de buldunuz!`
+    mesajAlani.style.color = "green";
+  }
+  else if (tahmin < gizliSayi) {
+      mesajAlani.textContent = "🔼 Daha büyük bir sayı dene!";
+      mesajAlani.style.color = "black";
+  }
+  else {
+      mesajAlani.textContent = "🔽 Daha küçük bir sayı dene!";
+      mesajAlani.style.color = "black";
+  }
+
+  });
+
+
+  
+</script>
+
+</body>
+</html>
