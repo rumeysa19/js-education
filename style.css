@@ -1,6 +1,6 @@
 .calculator {
     width: 320px;                                /* Kutunun genişliği */
-   background: linear-gradient(135deg, #ef65a8 0%, #4d9fff 60%, #181818 100%);                      
+    background: linear-gradient(135deg, #ef65a8 0%, #4d9fff 60%, #181818 100%);                      
     border-radius: 16px;                       /* Köşeleri yuvarlatır */
     box-shadow: 0 24px 48px rgba(0,0,0,0.3); /* Gölge efekti */
     margin: 180px auto;                       /* Üstten 40px boşluk, ortala */
